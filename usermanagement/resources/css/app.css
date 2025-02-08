@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Spinner animation */
+.spinner-border {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #ffffff;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+/* Sidebar for Admin Panel */
+html {
+  scroll-behavior: smooth;
+}
+
+  @media (max-width: 768px) {
+    aside {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    aside.translate-x-0 {
+        transform: translateX(0);
+    }
+}
+
+@media (min-width: 768px) {
+    aside {
+        transform: translateX(0); /* Ensure sidebar is always visible on medium and larger screens */
+    }
+}
+
+  
